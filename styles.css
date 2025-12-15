@@ -1,0 +1,221 @@
+/* --- IMPORTAR FUENTE DE ESCRITURA A MANO (opcional, si quieres más parecido) --- */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* --- ESTILOS BASE Y FONDO DE LIBRETA --- */
+body {
+    font-family: 'Permanent Marker', cursive, 'Georgia', serif; /* Simula un estilo escrito a mano */
+    background-color: #e6e6e6; /* Fondo de escritorio o mesa */
+    color: #333;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box; /* Asegura que padding no aumente el ancho total */
+}
+
+.pagina-contenedor {
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    max-width: 450px; /* Ancho típico de un cuaderno */
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    border-left: 20px solid #f0f0f0; /* Simular el margen de la libreta */
+    line-height: 1.5;
+    box-sizing: border-box; /* Asegura que padding y border no aumenten el ancho total */
+}
+
+.fecha-header {
+    text-align: right;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #c00000; /* Color de bolígrafo rojo */
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #ffb6c1; /* Línea decorativa */
+    padding-bottom: 5px;
+}
+
+.corazon {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* --- ESTILOS DE LOS RECIBOS (Notas Adhesivas) --- */
+.recibo {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 0.95em;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.recibo p {
+    margin: 5px 0;
+}
+
+/* Colores de las notas adhesivas */
+.recibo-rosa {
+    background-color: #ffcccc; /* Rosa claro */
+    transform: rotate(-1deg);
+}
+
+.recibo-amarillo {
+    background-color: #fffacd; /* Amarillo pastel */
+    transform: rotate(2deg);
+    margin-top: 30px;
+}
+
+
+
+.recibo-gris {
+    background-color: #eee; /* Gris claro */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Posición de la nota flotante para simular el look del scrapbook */
+.nota-flotante {
+    position: absolute;
+    top: 150px; /* Ajusta según dónde quieras que flote */
+    right: 5px; /* Ajusta según dónde quieras que flote */
+    width: 150px;
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+    font-size: 0.85em;
+    line-height: 1.3;
+}
+
+/* --- ESTILOS DE MÚSICA (Reproducir al hacer Click) --- */
+.musica-sticker {
+    background-color: #ffe0b2; /* Tono naranja suave para destacar */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #ffcc80;
+    text-align: center;
+}
+
+.audio-contenedor {
+    margin: 10px 0;
+}
+
+.play-button {
+    background-color: #c00000; /* Rojo vibrante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px; /* Tamaño máximo para el botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.play-button:hover {
+    background-color: #990000;
+}
+
+/* --- ESTILOS DE IMÁGENES --- */
+.imagen-decorativa {
+    position: absolute; /* Para poder posicionarlas libremente */
+    width: 80px; /* Tamaño base */
+    height: auto;
+    z-index: 5; /* Para que estén por encima de la página, pero debajo de las notas */
+}
+
+.imagen-snoopy-arriba {
+    top: 10px;
+    left: 20px; /* Posición del Snoopy de arriba a la izquierda */
+    transform: rotate(-8deg); /* Un poco rotado */
+}
+
+/* Estilos para imágenes dentro de los recibos */
+.imagen-recibo-central,
+.imagen-recibo-inferior {
+    display: block; /* Para que ocupen su propia línea */
+    max-width: 60%; /* No ocupen todo el ancho para dejar espacio para texto */
+    height: auto;
+    margin: 10px auto; /* Centrar la imagen dentro del recibo */
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transform: rotate(3deg); /* Ligeramente rotada */
+}
+
+.imagen-recibo-inferior {
+    transform: rotate(-2deg); /* Rotación diferente */
+}
+
+.imagen-pequena-final {
+    display: inline-block; /* Para que flote con el texto */
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle; /* Alinea la imagen con el texto del medio */
+}
+
+
+/* --- DESPEDIDA Y FIRMA --- */
+.firma-contenedor {
+    text-align: right;
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px dashed #c00000;
+}
+
+.despedida {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+.firma {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0 0 0;
+}
+
+/* MEDIA QUERY para Celulares (Asegura que el formato se adapte bien) */
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .pagina-contenedor {
+        padding: 15px;
+        border-left: 10px solid #f0f0f0; /* Margen de libreta más pequeño */
+    }
+    
+    .nota-flotante {
+        /* En pantallas pequeñas, la nota flotante se coloca abajo para no tapar texto */
+        position: static; /* Vuelve a la posición normal del flujo del documento */
+        width: 100%;
+        margin-top: 20px;
+        transform: rotate(0deg); /* Quita la rotación */
+    }
+
+    .imagen-decorativa {
+        width: 60px; /* Imágenes decorativas más pequeñas en móviles */
+    }
+
+    .imagen-snoopy-arriba {
+        top: 5px;
+        left: 5px;
+    }
+
+    .imagen-recibo-central,
+    .imagen-recibo-inferior {
+        max-width: 80%; /* Pueden ser un poco más grandes */
+    }
+
+    .play-button {
+        padding: 12px 25px; /* Botón de música un poco más pequeño */
+        font-size: 0.95em;
+    }
+}
